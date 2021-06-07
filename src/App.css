@@ -1,11 +1,15 @@
 .App {
-	border: 1px solid blue;
+	/* background-color: rgb(36, 28, 49); */
+	height: 100%;
+	width: 100%;
 }
 .App h1 {
 	text-align: center;
-	background-color: pink;
+	background-color: #5700b9;
+	padding: 4px;
 }
 
 .message {
 	text-align: center;
+	color: goldenrod;
 }
