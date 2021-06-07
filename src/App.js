@@ -19,7 +19,7 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Mastery Look-up</h1>
-			{message !== '' ? message : 'There is a problem...'}
+			<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 		</div>
 	);
 }
