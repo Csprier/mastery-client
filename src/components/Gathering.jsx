@@ -25,8 +25,8 @@ function GatheringData() {
     return (
       <div key={mastery} className="basic-item">
         <p>Mastery: {mastery}</p>
-        <p>Item Drop Chance: {itemChance}</p>
-        <p>Item Drop Amount: {dropAmount}</p>
+        <p>Item Drop Chance: {itemChance}%</p>
+        <p>Item Drop Amount: {dropAmount}%</p>
       </div>
     );
   });
@@ -35,7 +35,7 @@ function GatheringData() {
     <div className="basic-items-data">
       <h2>Basic Items</h2>
       <button onClick={() => fetchBasicItemData()}>GET</button>
-      <p className="">{basicItems ? basicItemElements : 'Data has not been retrieved.'}</p>
+      <div className="bid-display">{basicItems ? basicItemElements : 'Data has not been retrieved.'}</div>
     </div>
   );
 };
