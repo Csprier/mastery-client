@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './gather.css';
+import './gathering.css';
 
 function GatheringData() {
   const [basicItems, setBasicItemData] = useState([]);
