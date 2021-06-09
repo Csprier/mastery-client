@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './gathering.css';
 
@@ -9,33 +9,51 @@ function GatheringData() {
     const res = await fetch('http://localhost:8080/gathering/basic-items')
       .then(res => res.json())
       .catch(e => console.error(e));
-      let basicItemData = res.map(bracket => {
-        return { 
-          mastery: bracket.Mastery,
-          itemChance: bracket.ItemChance,
-          dropAmount: bracket.DropAmount
-        }
-      });
-      console.log('Basic Item Data:::', basicItemData);
+    let basicItemData = res.map(bracket => {
+      return { 
+        mastery: bracket.Mastery,
+        itemChance: bracket.ItemChance,
+        dropAmount: bracket.DropAmount
+      }
+    });
+    console.log('Basic Item Data:::', basicItemData);
     setBasicItemData(basicItemData);
   };
 
-  let basicItemElements = basicItems.map(item => {
+  useEffect(() => {
+    if (basicItems.length === 0) {
+      fetchBasicItemData();
+    }
+  }, [basicItems]);
+
+  let basicItemDataRows = basicItems.map(item => {
     const { mastery, itemChance, dropAmount } = item;
     return (
-      <div key={mastery} className="basic-item">
-        <p>Mastery: {mastery}</p>
-        <p>Item Drop Chance: {itemChance}%</p>
-        <p>Item Drop Amount: {dropAmount}%</p>
-      </div>
+      <tr>
+        <td>{mastery}</td>
+        <td>{itemChance}</td>
+        <td>{dropAmount}</td>
+      </tr>
     );
   });
 
   return(
     <div className="basic-items-data">
       <h2>Basic Items</h2>
-      <button onClick={() => fetchBasicItemData()}>GET</button>
-      <div className="bid-display">{basicItems ? basicItemElements : 'Data has not been retrieved.'}</div>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Mastery</th>
+              <th>Item Drop Chance</th>
+              <th>Item Drop Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>{basicItemDataRows}</tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
