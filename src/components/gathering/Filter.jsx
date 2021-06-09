@@ -1,8 +1,8 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function Filter(props) {
-  const [filter, setFilter] = useState(-1);
-  console.log('filter: ', filter);
+  // const [filter, setFilter] = useState(-1);
+  // console.log('filter: ', filter);
   const masteryOptionElements = props.masteries.map(bracket => {
     return (
       <option 
@@ -15,9 +15,10 @@ function Filter(props) {
     )
   });
 
-  let dynamicFilter = (props) => {
-    let value = document.getElementById('filter').value;
-    console.log('value:::', value);
+  const { setFilter } = props;
+  let dynamicFilter = () => {
+    let value = parseInt(document.getElementById('filter').value, 10);
+    // console.log('value:::', typeof value);
     setFilter(value);
   };
 

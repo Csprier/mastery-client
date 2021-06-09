@@ -7,6 +7,7 @@ import './basic-items.css';
 function BasicItems() {
   const [basicItems, setBasicItemData] = useState([]);
   const [masteries, setMasteries] = useState([]);
+  const [filter, setFilter] = useState('');
 
   async function fetchBasicItemData() {
     const res = await fetch('http://localhost:8080/gathering/basic-items')
@@ -34,7 +35,8 @@ function BasicItems() {
     }
   }, [basicItems]);
 
-  let basicItemDataRows = basicItems.map(item => {
+  let filteredBasicItemDataRows = basicItems.filter(item => (item.mastery === filter));
+  let basicItemDataRows = filteredBasicItemDataRows.map(item => {
     const { mastery, itemChance, dropAmount } = item;
     return (
       <tr key={mastery}>
@@ -45,12 +47,17 @@ function BasicItems() {
     );
   });
 
+  let rowsToRender = (filter) ? basicItemDataRows : null;
+
   return (
     <div className="basic-items-data">
 
       <h2>Basic Items</h2>
       
-      <Filter masteries={masteries} />
+      <Filter 
+        masteries={masteries}
+        setFilter={setFilter}
+      />
 
       <div className="table-display">
         <table className="fixed-rows">
@@ -65,7 +72,7 @@ function BasicItems() {
         <div className="table-container">
           <table>
             <tbody>
-              {basicItemDataRows}
+              {rowsToRender}
             </tbody>
           </table>
         </div>
