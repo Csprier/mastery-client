@@ -35,8 +35,7 @@ function BasicItems() {
     }
   }, [basicItems]);
 
-  let filteredBasicItemDataRows = basicItems.filter(item => (item.mastery === filter));
-  let basicItemDataRows = filteredBasicItemDataRows.map(item => {
+  let basicItemDataRows = basicItems.map(item => {
     const { mastery, itemChance, dropAmount } = item;
     return (
       <tr key={mastery}>
@@ -47,7 +46,19 @@ function BasicItems() {
     );
   });
 
-  let rowsToRender = (filter) ? basicItemDataRows : null;
+  let filteredBasicItemData = basicItems.filter(item => (item.mastery === filter));
+  let filteredBasicItemDataRows = filteredBasicItemData.map(item => {
+    const { mastery, itemChance, dropAmount } = item;
+    return (
+      <tr key={mastery}>
+        <td>{mastery}</td>
+        <td>{itemChance}%</td>
+        <td>{dropAmount}%</td>
+      </tr>
+    );
+  });
+
+  let rowsToRender = (filter) ? filteredBasicItemDataRows : basicItemDataRows;
 
   return (
     <div className="basic-items-data">
