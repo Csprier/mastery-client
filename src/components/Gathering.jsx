@@ -29,7 +29,7 @@ function GatheringData() {
   let basicItemDataRows = basicItems.map(item => {
     const { mastery, itemChance, dropAmount } = item;
     return (
-      <tr>
+      <tr key={mastery}>
         <td>{mastery}</td>
         <td>{itemChance}</td>
         <td>{dropAmount}</td>
@@ -50,7 +50,7 @@ function GatheringData() {
             </tr>
           </thead>
           <tbody>
-            <tr>{basicItemDataRows}</tr>
+            {basicItemDataRows}
           </tbody>
         </table>
       </div>
