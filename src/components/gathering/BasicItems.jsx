@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
+
+import Filter from './Filter';
+
 import './basic-items.css';
 
 function BasicItems() {
   const [basicItems, setBasicItemData] = useState([]);
+  const [masteries, setMasteries] = useState([]);
 
   async function fetchBasicItemData() {
     const res = await fetch('http://localhost:8080/gathering/basic-items')
@@ -15,8 +19,13 @@ function BasicItems() {
         dropAmount: bracket.DropAmount
       }
     });
-    console.log('Basic Item Data:::', basicItemData);
+    // console.log('Basic Item Data:::', basicItemData);
+    let masteriesData = basicItemData.map(bracket => {
+      return { mastery: bracket.mastery };
+    });
+    // console.log('Mastery Data:::', masteriesData);
     setBasicItemData(basicItemData);
+    setMasteries(masteriesData);
   };
 
   useEffect(() => {
@@ -40,6 +49,8 @@ function BasicItems() {
     <div className="basic-items-data">
 
       <h2>Basic Items</h2>
+      
+      <Filter masteries={masteries} />
 
       <div className="table-display">
         <table className="fixed-rows">
