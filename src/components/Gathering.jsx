@@ -43,15 +43,22 @@ function GatheringData() {
       <h2>Basic Items</h2>
 
       <div className="table-display">
-        <div className="table-row-container">
+        <table className="fixed-rows">
+          <tr>
+            <th>Mastery</th>
+            <th>Item Drop Chance</th>
+            <th>Item Drop Amount</th>
+          </tr>
+        </table>
+        <div className="table-container">
           <table>
-            <thead>
+            {/* <thead>
               <tr>
                 <th>Mastery</th>
                 <th>Item Drop Chance</th>
                 <th>Item Drop Amount</th>
               </tr>
-            </thead>
+            </thead> */}
             <tbody>
               {basicItemDataRows}
             </tbody>
