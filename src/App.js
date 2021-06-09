@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
-import GatheringData from './components/Gathering';
+import GatheringData from './components/gathering/Gathering';
 
 function App() {
 	const [message, setMessage] = useState('');
