@@ -11,7 +11,7 @@ function App() {
 			.then((res) =>
 				res.json()
 			);
-		console.log('RES:::', res);
+		// console.log('RES:::', res);
 		setMessage(res.message);
 	}
 
