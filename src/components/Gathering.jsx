@@ -31,29 +31,34 @@ function GatheringData() {
     return (
       <tr key={mastery}>
         <td>{mastery}</td>
-        <td>{itemChance}</td>
-        <td>{dropAmount}</td>
+        <td>{itemChance}%</td>
+        <td>{dropAmount}%</td>
       </tr>
     );
   });
 
   return(
     <div className="basic-items-data">
+
       <h2>Basic Items</h2>
-      <div className="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Mastery</th>
-              <th>Item Drop Chance</th>
-              <th>Item Drop Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {basicItemDataRows}
-          </tbody>
-        </table>
+
+      <div className="table-display">
+        <div className="table-row-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Mastery</th>
+                <th>Item Drop Chance</th>
+                <th>Item Drop Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {basicItemDataRows}
+            </tbody>
+          </table>
+        </div>
       </div>
+
     </div>
   );
 };
