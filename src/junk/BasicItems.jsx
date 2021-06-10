@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Filter from './Filter';
+import Filter from '../components/gathering/Filter';
 
 import './basic-items.css';
 
