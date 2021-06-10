@@ -96,15 +96,15 @@ function GatheringData() {
           <table>
             <thead>
               <tr>
-              <th>Mastery</th>
-              <th>Basic Item Drop Chance</th>
-              <th>Basic Item Drop Amount</th>
-              <th>Rare Resources Item Drop Chance</th>
-              <th>Rare Resources Item Drop Chance</th>
-              <th>Special Resources Item Drop Chance</th>
-              <th>Special Resources Item Drop Chance</th>
-              <th>Very Rare Resources Item Drop Chance</th>
-              <th>Very Rare Resources Item Drop Chance</th>
+                <th>Mastery</th>
+                <th>Basic Item Drop Chance</th>
+                <th>Basic Item Drop Amount</th>
+                <th>Rare Resources Item Drop Chance</th>
+                <th>Rare Resources Item Drop Chance</th>
+                <th>Special Resources Item Drop Chance</th>
+                <th>Special Resources Item Drop Chance</th>
+                <th>Very Rare Resources Item Drop Chance</th>
+                <th>Very Rare Resources Item Drop Chance</th>
               </tr>
             </thead>
             <tbody>

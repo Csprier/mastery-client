@@ -19,8 +19,8 @@ table {
   font-size: 13px;
 }
 th, td {
-  width: 33%;
-  height: 33px;
+  /* width: 33%; */
+  /* height: 33px; */
   padding: 3px;
   text-align: center;
   color: grey;
