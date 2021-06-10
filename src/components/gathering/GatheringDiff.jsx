@@ -28,6 +28,7 @@ function GatheringDiff(props) {
       return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
     });
     setRange(range);
+    doMath(range);
   };
 
   const masteryOptionElementsStart = props.masteries.map(bracket => {
@@ -81,14 +82,57 @@ function GatheringDiff(props) {
     );
   });
 
-  let calculationRow = range.map(bracket => {
-    console.log(bracket);
-    return (
-      <tr key={bracket.mastery}>
-        <td>MATH!</td>
-      </tr>
-    )
-  });
+  let calculationRow;
+
+  function doMath(range) {
+    let rangeValue1 = range[0];
+    let rangeValue2 = range[1];
+    console.log('1', rangeValue1);
+    console.log('2', rangeValue2);
+    let bi_dc, 
+        bi_da,
+        rr_dc,
+        rr_da,
+        sr_dc,
+        sr_da,
+        vrr_dc,
+        vrr_da;
+
+    if (rangeValue1.mastery > rangeValue2.mastery) {
+      bi_dc = rangeValue1.basic_item_drop_chance - rangeValue2.basic_item_drop_chance;
+      bi_da = rangeValue1.basic_item_drop_amount - rangeValue2.basic_item_drop_amount;
+      rr_dc = rangeValue1.rare_resource_drop_chance - rangeValue2.rare_resource_drop_chance;
+      rr_da = rangeValue1.rare_resource_drop_amount - rangeValue2.rare_resource_drop_amount;
+      sr_dc = rangeValue1.special_resource_drop_chance - rangeValue2.special_resource_drop_chance;
+      sr_da = rangeValue1.special_resource_drop_amount - rangeValue2.special_resource_drop_amount;
+      vrr_da = rangeValue1.very_rare_resource_drop_chance - rangeValue2.very_rare_resource_drop_chance;
+      vrr_dc = rangeValue1.very_rare_resource_drop_amount - rangeValue2.very_rare_resource_drop_amount;
+    }
+    if (rangeValue1.mastery < rangeValue2.mastery) {
+      bi_dc = rangeValue2.basic_item_drop_chance - rangeValue1.basic_item_drop_chance;
+      bi_da = rangeValue2.basic_item_drop_amount - rangeValue1.basic_item_drop_amount;
+      rr_dc = rangeValue2.rare_resource_drop_chance - rangeValue1.rare_resource_drop_chance;
+      rr_da = rangeValue2.rare_resource_drop_amount - rangeValue1.rare_resource_drop_amount;
+      sr_dc = rangeValue2.special_resource_drop_chance - rangeValue1.special_resource_drop_chance;
+      sr_da = rangeValue2.special_resource_drop_amount - rangeValue1.special_resource_drop_amount;
+      vrr_da = rangeValue2.very_rare_resource_drop_chance - rangeValue1.very_rare_resource_drop_chance;
+      vrr_dc = rangeValue2.very_rare_resource_drop_amount - rangeValue1.very_rare_resource_drop_amount;
+    };
+      
+    let dataArray = [{
+      basic_item_drop_chance: bi_dc,
+      basic_item_drop_amount: bi_da,
+      rare_resource_drop_chance: rr_dc,
+      rare_resource_drop_amount: rr_da,
+      special_resource_drop_chance: sr_dc,
+      special_resource_drop_amount: sr_da,
+      very_rare_resource_drop_chance: vrr_dc,
+      very_rare_resource_drop_amount: vrr_da
+    }];
+    console.log(dataArray);
+    return dataArray;
+  };
+
 
   return(
     <div className="gathering-diff">
