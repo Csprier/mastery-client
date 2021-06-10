@@ -4,12 +4,15 @@ function GatheringDiff(props) {
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
+  const [calculated, setCalculated] = useState([]);
 
   useEffect(() => {
     if (m1.length !== 0 && m2.length !== 0) {
-      createRangeArray(m1, m2);
+      createRangeArray(m1, m2)
+      //   .then(() => createComparisonArray(range))
+      //   .catch(e => console.error(e));
     }
-  }, [m1, m2]);
+  }, [m1, m2, range, calculated]);
 
   function setRange1() {
     let range = document.getElementById('m1').value;
@@ -28,7 +31,8 @@ function GatheringDiff(props) {
       return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
     });
     setRange(range);
-    doMath(range);
+    console.log('Range has been set.');
+    return;
   };
 
   const masteryOptionElementsStart = props.masteries.map(bracket => {
@@ -82,13 +86,11 @@ function GatheringDiff(props) {
     );
   });
 
-  let calculationRow;
-
-  function doMath(range) {
+  function createComparisonArray(range) {
     let rangeValue1 = range[0];
     let rangeValue2 = range[1];
-    console.log('1', rangeValue1);
-    console.log('2', rangeValue2);
+    // console.log('1', rangeValue1);
+    // console.log('2', rangeValue2);
     let bi_dc, 
         bi_da,
         rr_dc,
@@ -129,10 +131,37 @@ function GatheringDiff(props) {
       very_rare_resource_drop_chance: vrr_dc,
       very_rare_resource_drop_amount: vrr_da
     }];
-    console.log(dataArray);
-    return dataArray;
+    // console.log('dataArray: ', dataArray);
+    setCalculated(dataArray);
+    return;
   };
 
+  let calculatedRow = calculated.map(bracket => {
+    const { 
+      mastery,
+      basic_item_drop_chance,
+      basic_item_drop_amount,
+      rare_resource_drop_chance,
+      rare_resource_drop_amount,
+      special_resource_drop_chance,
+      special_resource_drop_amount,
+      very_rare_resource_drop_chance,
+      very_rare_resource_drop_amount
+    } = bracket;
+    return (
+      <tr key={mastery}>
+        <td>{mastery}</td>
+        <td>&#43; {basic_item_drop_chance}%</td>
+        <td>&#43; {basic_item_drop_amount}%</td>
+        <td>&#43; {rare_resource_drop_chance}%</td>
+        <td>&#43; {rare_resource_drop_amount}%</td>
+        <td>&#43; {special_resource_drop_chance}%</td>
+        <td>&#43; {special_resource_drop_amount}%</td>
+        <td>&#43; {very_rare_resource_drop_chance}%</td>
+        <td>&#43; {very_rare_resource_drop_amount}%</td>
+      </tr>
+    );
+  });
 
   return(
     <div className="gathering-diff">
@@ -168,8 +197,8 @@ function GatheringDiff(props) {
             </tr>
           </thead>
           <tbody>
-            {rangeRows}
-            {calculationRow}
+            {/* {rangeRows} */}
+            {/* {calculatedRow} */}
           </tbody>
         </table>
       </div>
