@@ -1,16 +1,26 @@
 import { useEffect, useState } from 'react';
 import gatheringUTIL from '../../utility/gathering/gathering.util';
 
-function OmniTable() {
+function GatheringData() {
+  const [data, setData] = useState([]);
+  async function fetchAllGatheringData() {
+    const data = await fetch('http://localhost:8080/gathering')
+      .then(res => res.json())
+      .then(json => setData(json))
+      .catch(e => console.error(e));
+    return data;
+  }
+
+  // const gatheringData = fetchAllGatheringData();
+  // console.log('Gathering data:::', gatheringData);
 
   useEffect(() => {
-   
-  }, []);
-
+    // fetchAllGatheringData();
+  }, [data]);
 
   return(
     <div>
-      <h1>OmniTable!</h1>
+      <h1>Gathering Data!</h1>
       <table className="fixed-rows">
         <tbody>
           <tr>
@@ -37,4 +47,4 @@ function OmniTable() {
   );
 };
 
-export default OmniTable;
+export default GatheringData;
