@@ -95,7 +95,10 @@ function GatheringData() {
         setFilter={setFilter}
       />
 
-      <GatheringDiff masteries={masteries} />
+      <GatheringDiff 
+        masteries={masteries} 
+        data={data}
+      />
 
       <div className="table-display">
         <div className="table-container">

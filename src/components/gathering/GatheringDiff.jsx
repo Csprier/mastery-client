@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 function GatheringDiff(props) {
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
+  const [range, setRange] = useState([]);
+
   /** ===============================================/
    *  RANGE FUNCTIONS 
    * ==========================*/
@@ -42,8 +44,18 @@ function GatheringDiff(props) {
   });
 
   /** ===============================================/
-   * 
+   * DATA FUNCTIONS
    * ==========================*/
+  useEffect(() => {
+    createRangeState(props);
+  }, [m1, m2, range, props]);
+
+  function createRangeState(props) {
+    let range = props.data.filter((bracket) => {
+      return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
+    });
+    console.log('range', range);
+  };
 
   return (
     <div className="gathering-diff">
