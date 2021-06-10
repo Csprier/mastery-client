@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 // components
 import Filter from './Filter';
 
+import './gathering-data.css';
+
 function GatheringData() {
   const [data, setData] = useState([]);
   const [masteries, setMasteries] = useState([]);
   const [filter, setFilter] = useState('');
-
 
   async function fetchAllGatheringData() {
     const data = await fetch('http://localhost:8080/gathering')
@@ -84,33 +85,35 @@ function GatheringData() {
   let rowsToRender = (filter) ? filteredDataRows : dataRows;
 
   return(
-    <div>
+    <div className="gathering-data">
       <h1>Gathering Data!</h1>
       <Filter 
         masteries={masteries}
         setFilter={setFilter}
       />
-      <table className="fixed-rows">
-        <tbody>
-          <tr>
-            <th>Mastery</th>
-            <th>Basic Item Drop Chance</th>
-            <th>Basic Item Drop Amount</th>
-            <th>Rare Resources Item Drop Chance</th>
-            <th>Rare Resources Item Drop Chance</th>
-            <th>Special Resources Item Drop Chance</th>
-            <th>Special Resources Item Drop Chance</th>
-            <th>Very Rare Resources Item Drop Chance</th>
-            <th>Very Rare Resources Item Drop Chance</th>
-          </tr>
-        </tbody>
-      </table>
-      <div className="table-container">
-        <table>
+      <div className="table-display">
+        <table className="fixed-rows">
           <tbody>
-            {rowsToRender}
+            <tr>
+              <th>Mastery</th>
+              <th>Basic Item Drop Chance</th>
+              <th>Basic Item Drop Amount</th>
+              <th>Rare Resources Item Drop Chance</th>
+              <th>Rare Resources Item Drop Chance</th>
+              <th>Special Resources Item Drop Chance</th>
+              <th>Special Resources Item Drop Chance</th>
+              <th>Very Rare Resources Item Drop Chance</th>
+              <th>Very Rare Resources Item Drop Chance</th>
+            </tr>
           </tbody>
         </table>
+        <div className="table-container">
+          <table>
+            <tbody>
+              {rowsToRender}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

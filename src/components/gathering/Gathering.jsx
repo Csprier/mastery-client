@@ -4,7 +4,7 @@ import GatheringData from './GatheringData';
 // css
 import './gathering.css';
 
-function GatheringData() {
+function Gathering() {
   return(
     <div>
       <GatheringData />
@@ -12,4 +12,4 @@ function GatheringData() {
   );
 };
 
-export default GatheringData;
+export default Gathering;

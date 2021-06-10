@@ -1,3 +1,14 @@
+.gathering-data {
+  width: 50%;
+  height: 450px;
+  margin: 0 auto;
+  padding: 0px;
+}
+.gathering-data h2 {
+  text-align: center;
+  padding: 0px;
+}
+
 /* ======================================= */
 /* TABLE CSS */
 /* ==================== */
