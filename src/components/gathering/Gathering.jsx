@@ -1,5 +1,5 @@
 // components
-// import BasicItems from './BasicItems';
+import BasicItems from './BasicItems';
 import OmniTable from './OmniTable';
 
 // Util
