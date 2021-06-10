@@ -94,8 +94,8 @@ function GatheringData() {
         masteries={masteries}
         setFilter={setFilter}
       />
-      
-      <GatheringData masteries={masteries} />
+
+      <GatheringDiff masteries={masteries} />
 
       <div className="table-display">
         <div className="table-container">
