@@ -1,8 +1,6 @@
-// import { useState } from 'react';
+import './filter.css';
 
 function Filter(props) {
-  // const [filter, setFilter] = useState(-1);
-  // console.log('filter: ', filter);
   const masteryOptionElements = props.masteries.map(bracket => {
     return (
       <option 
@@ -23,8 +21,14 @@ function Filter(props) {
   };
 
   return (
-    <div>
-      <select name="mastery-filter" id="filter" onChange={dynamicFilter}>
+    <div className="filter">
+      <select 
+        className="filter-select"
+        name="mastery-filter" 
+        id="filter" 
+        onChange={dynamicFilter}
+      >
+        <option value="#">Filter by Mastery</option>
         {masteryOptionElements}
       </select>
     </div>

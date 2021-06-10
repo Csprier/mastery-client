@@ -92,9 +92,10 @@ function GatheringData() {
         setFilter={setFilter}
       />
       <div className="table-display">
-        <table className="fixed-rows">
-          <tbody>
-            <tr>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
               <th>Mastery</th>
               <th>Basic Item Drop Chance</th>
               <th>Basic Item Drop Amount</th>
@@ -104,11 +105,8 @@ function GatheringData() {
               <th>Special Resources Item Drop Chance</th>
               <th>Very Rare Resources Item Drop Chance</th>
               <th>Very Rare Resources Item Drop Chance</th>
-            </tr>
-          </tbody>
-        </table>
-        <div className="table-container">
-          <table>
+              </tr>
+            </thead>
             <tbody>
               {rowsToRender}
             </tbody>
