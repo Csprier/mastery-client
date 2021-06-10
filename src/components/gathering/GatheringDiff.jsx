@@ -81,6 +81,15 @@ function GatheringDiff(props) {
     );
   });
 
+  let calculationRow = range.map(bracket => {
+    console.log(bracket);
+    return (
+      <tr key={bracket.mastery}>
+        <td>MATH!</td>
+      </tr>
+    )
+  });
+
   return(
     <div className="gathering-diff">
       <div>
@@ -116,6 +125,7 @@ function GatheringDiff(props) {
           </thead>
           <tbody>
             {rangeRows}
+            {calculationRow}
           </tbody>
         </table>
       </div>
