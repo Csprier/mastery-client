@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 // components
 import Filter from './Filter';
+import GatheringDiff from './GatheringDiff';
 
+// css
 import './gathering-data.css';
 
 function GatheringData() {
@@ -87,10 +89,14 @@ function GatheringData() {
   return(
     <div className="gathering-data">
       <h1>Gathering Data!</h1>
+
       <Filter 
         masteries={masteries}
         setFilter={setFilter}
       />
+      
+      <GatheringData masteries={masteries} />
+
       <div className="table-display">
         <div className="table-container">
           <table>
