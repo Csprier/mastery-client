@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// css
+import './gathering-diff.css';
+
 function GatheringDiff(props) {
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
@@ -157,16 +160,16 @@ function GatheringDiff(props) {
       } = bracket;
       
       return (
-        <tr key="diff">
-          <td>{mastery}</td>
-          <td>&#43; {basic_item_drop_chance}%</td>
-          <td>&#43; {basic_item_drop_amount}%</td>
-          <td>&#43; {rare_resource_drop_chance}%</td>
-          <td>&#43; {rare_resource_drop_amount}%</td>
-          <td>&#43; {special_resource_drop_chance}%</td>
-          <td>&#43; {special_resource_drop_amount}%</td>
-          <td>&#43; {very_rare_resource_drop_chance}%</td>
-          <td>&#43; {very_rare_resource_drop_amount}%</td>
+        <tr key="diff" className="diff-row">
+          <td className="diff-row-value">Gainz!</td>
+          <td className="diff-row-value">&#43; {basic_item_drop_chance}%</td>
+          <td className="diff-row-value">&#43; {basic_item_drop_amount}%</td>
+          <td className="diff-row-value">&#43; {rare_resource_drop_chance}%</td>
+          <td className="diff-row-value">&#43; {rare_resource_drop_amount}%</td>
+          <td className="diff-row-value">&#43; {special_resource_drop_chance}%</td>
+          <td className="diff-row-value">&#43; {special_resource_drop_amount}%</td>
+          <td className="diff-row-value">&#43; {very_rare_resource_drop_chance}%</td>
+          <td className="diff-row-value">&#43; {very_rare_resource_drop_amount}%</td>
         </tr>
       );
     })
