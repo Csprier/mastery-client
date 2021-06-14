@@ -13,6 +13,12 @@
   margin: 0px;
   padding: 3px;
 }
+.mastery-selectors p {
+  color: silver;
+  font-size: 11px;
+  margin: 0px 0px 5px 0px;
+  padding: 2px;
+}
 
 .mastery-select {
   background-color: black;
