@@ -196,10 +196,10 @@ function GatheringDiff(props) {
           {masteryOptionElementsStop}
         </select>
       </div>
-      <div>
-        <table>
+      <div className="table-display">
+        <table className="gathering-info">
           <thead>
-            <tr>
+            <tr className="info-row">
               <th>Mastery</th>
               <th>Basic Item Drop Chance</th>
               <th>Basic Item Drop Amount</th>

@@ -6,7 +6,7 @@ import './gathering.css';
 
 function Gathering() {
   return(
-    <div>
+    <div class="gathering-data-container">
       <GatheringData />
     </div>
   );
