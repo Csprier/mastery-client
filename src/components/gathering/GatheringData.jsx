@@ -10,8 +10,7 @@ import './gathering-data.css';
 function GatheringData() {
   const [data, setData] = useState([]);
   const [masteries, setMasteries] = useState([]);
-  const [filter, setFilter] = useState('');
-
+ 
   async function fetchAllGatheringData() {
     const data = await fetch('http://localhost:8080/gathering')
       .then(res => res.json())
@@ -29,6 +28,24 @@ function GatheringData() {
     }
   }, [data, masteries]);
 
+  return(
+    <div className="gathering-data">
+      <h1>Gathering Data!</h1>
+
+      <GatheringDiff 
+        masteries={masteries} 
+        data={data}
+      />
+    </div>
+  );
+};
+
+export default GatheringData;
+/*
+  const [filter, setFilter] = useState('');
+  const [checked, setChecked] = useState(false);
+*/
+/*
   let dataRows = data.map(bracket => {
     const { 
       mastery,
@@ -85,47 +102,34 @@ function GatheringData() {
   });
 
   let rowsToRender = (filter) ? filteredDataRows : dataRows;
-
-  return(
-    <div className="gathering-data">
-      <h1>Gathering Data!</h1>
-
-      {/* <Filter 
+*/
+/* <input type="checkbox" id="checked" checked={setChecked(!checked)} /> */
+/* {(checked) 
+  ? <div className="table-display">
+      <Filter 
         masteries={masteries}
         setFilter={setFilter}
-      /> */}
-
-      <GatheringDiff 
-        masteries={masteries} 
-        data={data}
       />
-
-      
-
-      {/* <div className="table-display">
-        <div className="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Mastery</th>
-                <th>Basic Item Drop Chance</th>
-                <th>Basic Item Drop Amount</th>
-                <th>Rare Resources Item Drop Chance</th>
-                <th>Rare Resources Item Drop Chance</th>
-                <th>Special Resources Item Drop Chance</th>
-                <th>Special Resources Item Drop Chance</th>
-                <th>Very Rare Resources Item Drop Chance</th>
-                <th>Very Rare Resources Item Drop Chance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rowsToRender}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Mastery</th>
+              <th>Basic Item Drop Chance</th>
+              <th>Basic Item Drop Amount</th>
+              <th>Rare Resources Item Drop Chance</th>
+              <th>Rare Resources Item Drop Chance</th>
+              <th>Special Resources Item Drop Chance</th>
+              <th>Special Resources Item Drop Chance</th>
+              <th>Very Rare Resources Item Drop Chance</th>
+              <th>Very Rare Resources Item Drop Chance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rowsToRender}
+          </tbody>
+        </table>
+      </div>
     </div>
-  );
-};
-
-export default GatheringData;
+  : null}
+*/
