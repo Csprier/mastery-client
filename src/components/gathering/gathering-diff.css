@@ -3,10 +3,6 @@
   padding: 0px;
 }
 
-.diff-row-value {
-  color: green;
-}
-
 .mastery-selectors {
   text-align: center;
   margin: 0px;
@@ -19,7 +15,9 @@
 }
 
 .mastery-select {
-  border: 1px solid rgb(36, 28, 49);
+  background-color: black;
+  border: 1px solid rgba(109, 109, 109, 0.39);
+  color: silver;
   margin: 2px;
   padding: 3px;
 }
@@ -52,4 +50,18 @@ td {
 }
 .info-row th {
   border: 1px solid silver;
+}
+
+.range-row {
+  border: 1px solid silver;
+}
+.range-row td {
+  border: 1px solid rgba(109, 109, 109, 0.39);
+}
+
+.diff-row {
+}
+.diff-row td {
+  color: rgb(0, 207, 0);
+  border: 1px solid green;
 }

@@ -131,7 +131,7 @@ function GatheringDiff(props) {
     } = bracket;
 
     return (
-      <tr key={mastery}>
+      <tr key={mastery} className="range-row">
         <td>{mastery}</td>
         <td>{basic_item_drop_chance}%</td>
         <td>{basic_item_drop_amount}%</td>
@@ -160,15 +160,15 @@ function GatheringDiff(props) {
       
       return (
         <tr key="diff" className="diff-row">
-          <td className="diff-row-value">Gainz!</td>
-          <td className="diff-row-value">&#43; {basic_item_drop_chance}%</td>
-          <td className="diff-row-value">&#43; {basic_item_drop_amount}%</td>
-          <td className="diff-row-value">&#43; {rare_resource_drop_chance}%</td>
-          <td className="diff-row-value">&#43; {rare_resource_drop_amount}%</td>
-          <td className="diff-row-value">&#43; {special_resource_drop_chance}%</td>
-          <td className="diff-row-value">&#43; {special_resource_drop_amount}%</td>
-          <td className="diff-row-value">&#43; {very_rare_resource_drop_chance}%</td>
-          <td className="diff-row-value">&#43; {very_rare_resource_drop_amount}%</td>
+          <td>Gainz!</td>
+          <td>&#43; {basic_item_drop_chance}%</td>
+          <td>&#43; {basic_item_drop_amount}%</td>
+          <td>&#43; {rare_resource_drop_chance}%</td>
+          <td>&#43; {rare_resource_drop_amount}%</td>
+          <td>&#43; {special_resource_drop_chance}%</td>
+          <td>&#43; {special_resource_drop_amount}%</td>
+          <td>&#43; {very_rare_resource_drop_chance}%</td>
+          <td>&#43; {very_rare_resource_drop_amount}%</td>
         </tr>
       );
     })
