@@ -148,7 +148,6 @@ function GatheringDiff(props) {
   const diffRow = (diff !== undefined) 
     ? diff.map(bracket => {
       const { 
-        mastery,
         basic_item_drop_chance,
         basic_item_drop_amount,
         rare_resource_drop_chance,
@@ -178,9 +177,11 @@ function GatheringDiff(props) {
   // RETURN STATEMENT FOR COMPONENT
   return (
     <div className="gathering-diff">
-      <div>
+      <div className="mastery-selectors">
+        <h4>Compare 2 masteries to see the difference!</h4>
         <select
           id="m1"
+          className="mastery-select"
           onChange={setRange1}
         >
           <option>Select Mastery A</option>
@@ -188,6 +189,7 @@ function GatheringDiff(props) {
         </select>
         <select
           id="m2"
+          className="mastery-select"
           onChange={setRange2}
         >
           <option>Select Mastery B</option>

@@ -90,17 +90,19 @@ function GatheringData() {
     <div className="gathering-data">
       <h1>Gathering Data!</h1>
 
-      <Filter 
+      {/* <Filter 
         masteries={masteries}
         setFilter={setFilter}
-      />
+      /> */}
 
       <GatheringDiff 
         masteries={masteries} 
         data={data}
       />
 
-      <div className="table-display">
+      
+
+      {/* <div className="table-display">
         <div className="table-container">
           <table>
             <thead>
@@ -121,7 +123,7 @@ function GatheringData() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
