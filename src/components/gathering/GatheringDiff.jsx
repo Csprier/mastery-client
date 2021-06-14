@@ -47,7 +47,6 @@ function GatheringDiff(props) {
   /** ===============================================/
    * DATA FUNCTIONS
    * ==========================*/
-  
   useEffect(() => {
     function updateRange() {
       let dyanmicRange = props.data.filter((bracket) => {
@@ -57,9 +56,9 @@ function GatheringDiff(props) {
     };
     updateRange();
   }, [m1, m2, props.data]);
-
+  
   useEffect(() => {
-    function mathForDiffRow() {
+    function createDiffObjectWithValuesToRender() {
       if (range !== undefined || range.length > 0) {
         let rangeRow = range;
         let r1 = rangeRow[0];
@@ -108,13 +107,12 @@ function GatheringDiff(props) {
           very_rare_resource_drop_chance: vrr_dc.toFixed(2),
           very_rare_resource_drop_amount: vrr_da.toFixed(2)
         }];
-        setDiff(dataArray);
-        console.log('DIFF', diff);
+        return dataArray;
       };
-    }
-    mathForDiffRow();
-  }, [diff, range]);
-
+    };
+    let diffData = createDiffObjectWithValuesToRender();
+    setDiff(diffData);
+  }, [range]);
 
   const rangeRows = range.map(bracket => {
     const { 
@@ -144,33 +142,35 @@ function GatheringDiff(props) {
     );
   });
 
-  const diffRow = diff.map(bracket => {
-    const { 
-      mastery,
-      basic_item_drop_chance,
-      basic_item_drop_amount,
-      rare_resource_drop_chance,
-      rare_resource_drop_amount,
-      special_resource_drop_chance,
-      special_resource_drop_amount,
-      very_rare_resource_drop_chance,
-      very_rare_resource_drop_amount
-    } = bracket;
-    
-    return (
-      <tr key={mastery}>
-        <td>{mastery}</td>
-        <td>&#43; {basic_item_drop_chance}%</td>
-        <td>&#43; {basic_item_drop_amount}%</td>
-        <td>&#43; {rare_resource_drop_chance}%</td>
-        <td>&#43; {rare_resource_drop_amount}%</td>
-        <td>&#43; {special_resource_drop_chance}%</td>
-        <td>&#43; {special_resource_drop_amount}%</td>
-        <td>&#43; {very_rare_resource_drop_chance}%</td>
-        <td>&#43; {very_rare_resource_drop_amount}%</td>
-      </tr>
-    );
-  });
+  const diffRow = (diff !== undefined) 
+    ? diff.map(bracket => {
+      const { 
+        mastery,
+        basic_item_drop_chance,
+        basic_item_drop_amount,
+        rare_resource_drop_chance,
+        rare_resource_drop_amount,
+        special_resource_drop_chance,
+        special_resource_drop_amount,
+        very_rare_resource_drop_chance,
+        very_rare_resource_drop_amount
+      } = bracket;
+      
+      return (
+        <tr key="diff">
+          <td>{mastery}</td>
+          <td>&#43; {basic_item_drop_chance}%</td>
+          <td>&#43; {basic_item_drop_amount}%</td>
+          <td>&#43; {rare_resource_drop_chance}%</td>
+          <td>&#43; {rare_resource_drop_amount}%</td>
+          <td>&#43; {special_resource_drop_chance}%</td>
+          <td>&#43; {special_resource_drop_amount}%</td>
+          <td>&#43; {very_rare_resource_drop_chance}%</td>
+          <td>&#43; {very_rare_resource_drop_amount}%</td>
+        </tr>
+      );
+    })
+  : null;
 
   // RETURN STATEMENT FOR COMPONENT
   return (
@@ -208,7 +208,7 @@ function GatheringDiff(props) {
           </thead>
           <tbody>
             {rangeRows}
-            {(diff.length > 0) ? diffRow : null}
+            {diffRow}
           </tbody>
         </table>
       </div>
