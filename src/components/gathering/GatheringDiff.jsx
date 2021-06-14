@@ -6,7 +6,7 @@ function GatheringDiff(props) {
   const [range, setRange] = useState([]);
 
   /** ===============================================/
-   *  RANGE FUNCTIONS 
+   *  RANGE FROM SELECT ELEMENT FUNCTIONS 
    * ==========================*/
   function setRange1() {
     let range = document.getElementById('m1').value;
@@ -46,14 +46,16 @@ function GatheringDiff(props) {
   /** ===============================================/
    * DATA FUNCTIONS
    * ==========================*/
+  
   useEffect(() => {
-    let range = props.data.filter((bracket) => {
-      return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
-    });
-    console.log('range', range);
-    // setRange(range);
-  }, [m1, m2, range, props]);
-
+    function updateRange() {
+      let dyanmicRange = props.data.filter((bracket) => {
+        return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
+      });
+      setRange(dyanmicRange);
+    };
+    updateRange();
+  }, [m1, m2, props.data]);
 
   const rangeRows = range.map(bracket => {
     const { 
