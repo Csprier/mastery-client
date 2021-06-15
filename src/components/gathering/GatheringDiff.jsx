@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // css
-import './gathering-diff.css';
+import './css/gathering-diff.css';
 
 function GatheringDiff(props) {
   const [m1, setM1] = useState('');

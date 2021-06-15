@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import './css/cooking-diff.css';
 
 function CookingDiff(props) {
-  console.log(props);
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
@@ -152,7 +151,6 @@ function CookingDiff(props) {
     })
     : null;
 
-    console.log('diff', diff);
   return (
     <div className="cooking-diff">
       <div className="mastery-selectors">

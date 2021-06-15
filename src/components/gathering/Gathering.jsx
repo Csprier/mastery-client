@@ -2,7 +2,7 @@
 import GatheringData from './GatheringData';
 
 // css
-import './gathering.css';
+import './css/gathering.css';
 
 function Gathering() {
   return(

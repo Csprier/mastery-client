@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-
+// eslint-disable-next-line
 // components
-// import Filter from './Filter';
 import GatheringDiff from './GatheringDiff';
 
 // css
-import './gathering-data.css';
+import './css/gathering-data.css';
 
 function GatheringData() {
   const [data, setData] = useState([]);
@@ -42,6 +41,7 @@ function GatheringData() {
 
 export default GatheringData;
 /*
+  // import Filter from './Filter';
   const [filter, setFilter] = useState('');
   const [checked, setChecked] = useState(false);
 */
