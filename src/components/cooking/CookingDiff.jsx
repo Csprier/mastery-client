@@ -117,7 +117,7 @@ function CookingDiff(props) {
 
     return (
       <tr key={mastery} className="range-row">
-        <td>{mastery}%</td>
+        <td>{mastery}</td>
         <td>{higher_grade_chance}%</td>
         <td>{higher_grade_max_amount_chance}%</td>
         <td>{imperial_cooking_silver}%</td>
