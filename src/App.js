@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import {
+	BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
 
 // components
 import Cooking from './components/cooking/Cooking';
@@ -24,12 +31,30 @@ function App() {
 	}, [message]);
 
 	return (
-		<div className='App'>
-			<h1>Mastery Look-up</h1>
-			<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
-			<Gathering />
-			<Cooking />
-		</div>
+		<Router>
+			<div className='App'>
+				<h1>Mastery Look-up</h1>
+				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
+				<div>
+					<ul>
+						<li>
+							<Link to="/gathering">Gathering</Link>
+						</li>
+						<li>
+							<Link to="/cooking">Cooking</Link>
+						</li>
+					</ul>
+				</div>
+				<Switch>
+					<Route path="/gathering">
+						<Gathering />
+					</Route>
+					<Route path="/cooking">
+						<Cooking />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
 	);
 }
 
