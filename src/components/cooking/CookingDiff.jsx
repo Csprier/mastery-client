@@ -118,12 +118,12 @@ function CookingDiff(props) {
 
     return (
       <tr key={mastery} className="range-row">
-        <tr>{mastery}%</tr>
-        <tr>{higher_grade_chance}%</tr>
-        <tr>{higher_grade_max_amount_chance}%</tr>
-        <tr>{imperial_cooking_silver}%</tr>
-        <tr>{mass_cooking_chance}%</tr>
-        <tr>{max_dishes_chance}%</tr>
+        <td>{mastery}%</td>
+        <td>{higher_grade_chance}%</td>
+        <td>{higher_grade_max_amount_chance}%</td>
+        <td>{imperial_cooking_silver}%</td>
+        <td>{mass_cooking_chance}%</td>
+        <td>{max_dishes_chance}%</td>
       </tr>
     );
   });
@@ -140,14 +140,14 @@ function CookingDiff(props) {
       } = bracket;
 
       return (
-        <tr key={mastery} className="range-row">
-        <tr>Gainz!</tr>
-        <tr>&#43; {higher_grade_chance}%</tr>
-        <tr>&#43; {higher_grade_max_amount_chance}%</tr>
-        <tr>&#43; {imperial_cooking_silver}%</tr>
-        <tr>&#43; {mass_cooking_chance}%</tr>
-        <tr>&#43; {max_dishes_chance}%</tr>
-      </tr>
+        <tr key={mastery} className="diff-row">
+          <td>Gainz!</td>
+          <td>&#43; {higher_grade_chance}%</td>
+          <td>&#43; {higher_grade_max_amount_chance}%</td>
+          <td>&#43; {imperial_cooking_silver}%</td>
+          <td>&#43; {mass_cooking_chance}%</td>
+          <td>&#43; {max_dishes_chance}%</td>
+        </tr>
       );
     })
     : null;
@@ -189,7 +189,7 @@ function CookingDiff(props) {
           </thead>
           <tbody>
             {rangeRows}
-            {/* {diffRow} */}
+            {diffRow}
           </tbody>
         </table>
       </div>
