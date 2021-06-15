@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import CookingDiff from './CookingDiff';
 
 // css
-import './cooking-data.css';
+import './css/cooking-data.css';
 
 function CookingData() {
   const [data, setData] = useState([]);

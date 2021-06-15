@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
-import Gathering from './components/gathering/Gathering';
+import Cooking from './components/cooking/Cooking';
+// import Gathering from './components/gathering/Gathering';
 
 function App() {
 	const [message, setMessage] = useState('');
@@ -23,7 +24,8 @@ function App() {
 		<div className='App'>
 			<h1>Mastery Look-up</h1>
 			<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
-			<Gathering />
+			{/* <Gathering /> */}
+			<Cooking />
 		</div>
 	);
 }
