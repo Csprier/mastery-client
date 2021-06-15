@@ -1,3 +1,5 @@
+import React from 'react';
+
 // components
 import GatheringData from './GatheringData';
 

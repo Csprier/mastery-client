@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line
 // components
 import GatheringDiff from './GatheringDiff';

@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from 'react';
 
+// components
 import Cooking from './components/cooking/Cooking';
 import Gathering from './components/gathering/Gathering';
+
+// css
+import './App.css';
 
 function App() {
 	const [message, setMessage] = useState('');
