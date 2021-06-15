@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // components
-import Filter from './Filter';
+// import Filter from './Filter';
 import GatheringDiff from './GatheringDiff';
 
 // css
@@ -33,8 +33,8 @@ function GatheringData() {
       <h1>Gathering Data!</h1>
 
       <GatheringDiff 
-        masteries={masteries} 
         data={data}
+        masteries={masteries} 
       />
     </div>
   );
