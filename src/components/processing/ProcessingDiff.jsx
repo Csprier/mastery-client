@@ -82,9 +82,9 @@ function ProcessingDiff(props) {
         let dataArray = [{ quantity }];
         return dataArray;
       }
-      let diffData = createDiffObjectWithValuesToRender();
-      setDiff(diffData);
     };
+    let diffData = createDiffObjectWithValuesToRender();
+    setDiff(diffData);
   }, [range]);
 
   const rangeRows = range.map(bracket => {
@@ -109,8 +109,8 @@ function ProcessingDiff(props) {
       } = bracket;
 
     return (
-      <tr key={mastery} className="range-row">
-        <td>{mastery}</td>
+      <tr key="gainz" className="diff-row">
+        <td>Gainz!</td>
         <td>&#43; {quantity}</td>
       </tr>
     );
