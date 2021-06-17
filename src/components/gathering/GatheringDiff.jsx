@@ -178,7 +178,7 @@ function GatheringDiff(props) {
     <div className="gathering-diff">
       <div className="mastery-selectors">
         <h4>Compare 2 masteries to see the difference!</h4>
-        <p>* Order does not matter, it will subtract the lower automatically. *</p>
+        <p>* Order does not matter, it will calculate automatically. *</p>
         <select
           id="m1"
           className="mastery-select"
