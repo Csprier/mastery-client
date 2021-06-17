@@ -1,4 +1,4 @@
-import react, { useEffect, useState } = require("react");
+import React, { useEffect, useState }from 'react';
 
 // components
 import ProcessingDiff from './ProcessingDiff';

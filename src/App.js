@@ -10,6 +10,7 @@ import {
 // components
 import Cooking from './components/cooking/Cooking';
 import Gathering from './components/gathering/Gathering';
+import Processing from './components/processing/Processing';
 
 // css
 import './App.css';
@@ -43,6 +44,9 @@ function App() {
 						<li>
 							<Link to="/cooking">Cooking</Link>
 						</li>
+						<li>
+							<Link to="/processing">Processing</Link>
+						</li>
 					</ul>
 				</div>
 				<Switch>
@@ -51,6 +55,9 @@ function App() {
 					</Route>
 					<Route path="/cooking">
 						<Cooking />
+					</Route>
+					<Route path="/processing">
+						<Processing />
 					</Route>
 				</Switch>
 			</div>
