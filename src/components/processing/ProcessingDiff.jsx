@@ -50,6 +50,111 @@ function ProcessingDiff(props) {
   /** ===============================================/
    * DATA FUNCTIONS
    * ==========================*/
+   useEffect(() => {
+    function updateRange() {
+      let dyanmicRange = props.data.filter((bracket) => {
+        return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
+      });
+      setRange(dyanmicRange);
+    };
+    updateRange();
+  }, [m1, m2, props.data]);
+
+  useEffect(() => {
+    function createDiffObjectWithValuesToRender() {
+      if (range !== undefined || range.length > 0) {
+        let rangeRow = range;
+        let r1 = rangeRow[0];
+        let r2 = rangeRow[1];
+        let quantity;
+
+        if (r1 === undefined || r2 === undefined) {
+          return;
+        }
+
+        if (r1.mastery > r2.mastery) {
+          quantity = r1.quantity - r2.quantity;
+        }
+        if (r1.mastery < r2.mastery) {
+          quantity = r2.quantity - r1.quantity;
+        }
+
+        let dataArray = [{ quantity }];
+        return dataArray;
+      }
+      let diffData = createDiffObjectWithValuesToRender();
+      setDiff(diffData);
+    };
+  }, [range]);
+
+  const rangeRows = range.map(bracket => {
+    const {
+      mastery,
+      quantity
+    } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>{quantity}</td>
+      </tr>
+    );
+  });
+
+  const diffRow = (diff !== undefined)
+    ? diff.map(bracket => {
+      const {
+        mastery,
+        quantity
+      } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>&#43; {quantity}</td>
+      </tr>
+    );
+  })
+  : null;
+
+  return(
+    <div className="processing-diff">
+      <div className="mastery-selectors">
+        <h4>Compare 2 masteries to see the difference!</h4>
+        <p>* Order does not matter, it will calculate automatically. *</p>
+        <select 
+          id="m1"
+          className="mastery-select"
+          onChange={setRange1}
+        >
+          <option>Select Mastery A</option>
+          {masteryOptionElementsStart}
+        </select>
+        <select
+          id="m2"
+          className="mastery-select"
+          onChange={setRange2}
+        >
+          <option>Select Mastery B</option>
+          {masteryOptionElementsStop}
+        </select>
+      </div>
+      <div className="table-display">
+        <table className="processing-info">
+          <thead>
+            <tr className="info-row">
+              <th>Mastery</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rangeRows}
+            {diffRow}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default ProcessingDiff;
