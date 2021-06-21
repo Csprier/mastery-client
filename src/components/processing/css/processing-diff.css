@@ -66,8 +66,6 @@ td {
   border: 1px solid rgba(109, 109, 109, 0.39);
 }
 
-.diff-row {
-}
 .diff-row td {
   color: rgb(0, 207, 0);
   border: 1px solid green;
