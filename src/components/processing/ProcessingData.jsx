@@ -4,7 +4,7 @@ import React, { useEffect, useState }from 'react';
 import ProcessingDiff from './ProcessingDiff';
 
 // css
-import './css/processing-diff.css';
+import './css/processing-data.css';
 
 function ProcessingData() {
   const [data, setData] = useState([]);
