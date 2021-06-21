@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import './css/fishing-diff.css';
 
 function FishingDiff(props) {
+  console.log('props', props);
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
@@ -71,12 +72,13 @@ function FishingDiff(props) {
         if (r1 === undefined || r2 === undefined) {
           return;
         }
-
+        console.log('r1', r1);
+        console.log('r2', r2);
         if (r1.mastery > r2.mastery) {
-          orangeFishRate = r1.orangeFishRate - r2.orangeFishRate;
+          orangeFishRate = r1.orange_fish_rate - r2.orange_fish_rate;
         }
         if (r1.mastery < r2.mastery) {
-          orangeFishRate = r2.orangeFishRate - r1.orangeFishRate;
+          orangeFishRate = r2.orange_fish_rate - r1.orange_fish_rate;
         }
 
         let dataArray = [{ orangeFishRate }];
@@ -90,13 +92,13 @@ function FishingDiff(props) {
   const rangeRows = range.map(bracket => {
     const {
       mastery,
-      orangeFishRate
+      orange_fish_rate
     } = bracket;
 
     return (
       <tr key={mastery} className="range-row">
         <td>{mastery}</td>
-        <td>{orangeFishRate}</td>
+        <td>{orange_fish_rate}</td>
       </tr>
     );
   });
@@ -104,14 +106,13 @@ function FishingDiff(props) {
   const diffRow = (diff !== undefined)
     ? diff.map(bracket => {
       const {
-        mastery,
         orangeFishRate
       } = bracket;
 
       return (
         <tr key="gainz" className="diff-row">
           <td>Gainz!</td>
-          <td>&#43; {orangeFishRate}</td>
+          <td>&#43; {orangeFishRate.toFixed(2)}</td>
         </tr>
       );
     })

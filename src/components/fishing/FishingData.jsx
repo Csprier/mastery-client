@@ -13,7 +13,6 @@ function FishingData() {
   async function fetchAllFishingData() {
     const data = await fetch('http://localhost:8080/fishing')
       .then(res => res.json())
-      .then(res => console.log('res', res))
       .catch(e => console.error(e));
     let masteriesData = data.map(bracket => {
       return { mastery: bracket.mastery }
@@ -26,6 +25,7 @@ function FishingData() {
     if (data.length === 0) {
       fetchAllFishingData();
     }
+    console.log('masteries:', masteries);
   }, [data, masteries]);
 
   return (
