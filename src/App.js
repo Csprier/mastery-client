@@ -12,6 +12,7 @@ import Cooking from './components/cooking/Cooking';
 import Fishing from './components/fishing/Fishing';
 import Gathering from './components/gathering/Gathering';
 import Processing from './components/processing/Processing';
+import Training from './components/training/Training';
 
 // css
 import './App.css';
@@ -40,31 +41,37 @@ function App() {
 				<div>
 					<ul>
 						<li>
-							<Link to="/gathering">Gathering</Link>
+							<Link to="/cooking">Cooking</Link>
 						</li>
 						<li>
-							<Link to="/cooking">Cooking</Link>
+							<Link to="/fishing">Fishing</Link>
+						</li>
+						<li>
+							<Link to="/gathering">Gathering</Link>
 						</li>
 						<li>
 							<Link to="/processing">Processing</Link>
 						</li>
 						<li>
-							<Link to="/fishing">Fishing</Link>
+							<Link to="/training">Training</Link>
 						</li>
 					</ul>
 				</div>
 				<Switch>
-					<Route path="/gathering">
-						<Gathering />
-					</Route>
 					<Route path="/cooking">
 						<Cooking />
+					</Route>
+					<Route path="/fishing">
+						<Fishing />
+					</Route>
+					<Route path="/gathering">
+						<Gathering />
 					</Route>
 					<Route path="/processing">
 						<Processing />
 					</Route>
-					<Route path="/fishing">
-						<Fishing />
+					<Route path="/training">
+						<Training />
 					</Route>
 				</Switch>
 			</div>
