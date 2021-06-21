@@ -155,4 +155,6 @@ function FishingDiff(props) {
       </div>
     </div>
   );
-}; 
+};
+
+export default FishingDiff;

@@ -4,7 +4,7 @@ import React, { useEffect, useState }from 'react';
 import FishingDiff from './FishingDiff';
 
 // css 
-import './css/fishing-diff.css';
+import './css/fishing-data.css';
 
 function FishingData() {
   const [data, setData] = useState([]);
@@ -13,6 +13,7 @@ function FishingData() {
   async function fetchAllFishingData() {
     const data = await fetch('http://localhost:8080/fishing')
       .then(res => res.json())
+      .then(res => console.log('res', res))
       .catch(e => console.error(e));
     let masteriesData = data.map(bracket => {
       return { mastery: bracket.mastery }

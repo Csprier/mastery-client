@@ -9,6 +9,7 @@ import {
 
 // components
 import Cooking from './components/cooking/Cooking';
+import Fishing from './components/fishing/Fishing';
 import Gathering from './components/gathering/Gathering';
 import Processing from './components/processing/Processing';
 
@@ -47,6 +48,9 @@ function App() {
 						<li>
 							<Link to="/processing">Processing</Link>
 						</li>
+						<li>
+							<Link to="/fishing">Fishing</Link>
+						</li>
 					</ul>
 				</div>
 				<Switch>
@@ -58,6 +62,9 @@ function App() {
 					</Route>
 					<Route path="/processing">
 						<Processing />
+					</Route>
+					<Route path="/fishing">
+						<Fishing />
 					</Route>
 				</Switch>
 			</div>
