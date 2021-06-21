@@ -86,9 +86,9 @@ function TrainingDiff(props) {
         }
 
         let dataArray = [{ 
-          breed_higher_tier_increase: bhti,
-          taming_success_increase: tsi,
-          mount_xp_increase: mx
+          breed_higher_tier_increase: bhti.toFixed(2),
+          taming_success_increase: tsi.toFixed(2),
+          mount_xp_increase: mx.toFixed(2)
          }];
         return dataArray;
       }
@@ -108,9 +108,9 @@ function TrainingDiff(props) {
     return (
       <tr key={mastery} className="range-row">
         <td>{mastery}</td>
-        <td>{breed_higher_tier_increase}</td>
-        <td>{taming_success_increase}</td>
-        <td>{mount_xp_increase}</td>
+        <td>{breed_higher_tier_increase}%</td>
+        <td>{taming_success_increase}%</td>
+        <td>{mount_xp_increase}%</td>
       </tr>
     );
   });
@@ -126,9 +126,9 @@ function TrainingDiff(props) {
     return (
       <tr key="gainz" className="diff-row">
         <td>Gainz!</td>
-        <td>&#43; {breed_higher_tier_increase}</td>
-        <td>&#43; {taming_success_increase}</td>
-        <td>&#43; {mount_xp_increase}</td>
+        <td>&#43; {breed_higher_tier_increase}%</td>
+        <td>&#43; {taming_success_increase}%</td>
+        <td>&#43; {mount_xp_increase}%</td>
       </tr>
     );
   })
@@ -161,7 +161,9 @@ function TrainingDiff(props) {
           <thead>
             <tr className="info-row">
               <th>Mastery</th>
-              <th>Quantity</th>
+              <th>Breed Higher Tier Increase</th>
+              <th>Taming Success Increase</th>
+              <th>Mount XP Increase</th>
             </tr>
           </thead>
           <tbody>
