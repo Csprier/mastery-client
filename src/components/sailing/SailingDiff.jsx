@@ -89,10 +89,10 @@ function SailingDiff(props) {
         }
 
         let dataArray = [{
-          acceleration_increase = ai.toFixed(2),
-          speed_increase = si.toFixed(2),
-          turn_increase = ti.toFixed(2),
-          brake_increase = bi.toFixed(2)
+          acceleration_increase: ai.toFixed(2),
+          speed_increase: si.toFixed(2),
+          turn_increase: ti.toFixed(2),
+          brake_increase: bi.toFixed(2)
         }];
         return dataArray;
       }
@@ -133,7 +133,6 @@ function SailingDiff(props) {
     return (
       <tr key="gainz" className="diff-row">
         <td>Gainz!</td>
-        <td>&#43; {quantity}</td>
         <td>&#43; {acceleration_increase}%</td>
         <td>&#43; {speed_increase}%</td>
         <td>&#43; {turn_increase}%</td>
@@ -170,7 +169,6 @@ function SailingDiff(props) {
           <thead>
             <tr className="info-row">
               <th>Mastery</th>
-              <th>Quantity</th>
               <th>Acceleration Increase</th>
               <th>Speed Increase</th>
               <th>Turn Increase</th>

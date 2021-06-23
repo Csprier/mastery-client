@@ -13,6 +13,7 @@ import Cooking from './components/cooking/Cooking';
 import Fishing from './components/fishing/Fishing';
 import Gathering from './components/gathering/Gathering';
 import Processing from './components/processing/Processing';
+import Sailing from './components/sailing/Sailing';
 import Training from './components/training/Training';
 
 // css
@@ -57,6 +58,9 @@ function App() {
 							<Link to="/processing">Processing</Link>
 						</li>
 						<li>
+							<Link to="/sailing">Sailing</Link>
+						</li>
+						<li>
 							<Link to="/training">Training</Link>
 						</li>
 					</ul>
@@ -76,6 +80,9 @@ function App() {
 					</Route>
 					<Route path="/processing">
 						<Processing />
+					</Route>
+					<Route path="/sailing">
+						<Sailing />
 					</Route>
 					<Route path="/training">
 						<Training />
