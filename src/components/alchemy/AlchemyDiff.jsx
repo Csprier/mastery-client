@@ -117,11 +117,11 @@ function AlchemyDiff(props) {
     return (
       <tr key={mastery} className="range-row">
         <td>{mastery}</td>
-        <td>{chance_for_max}</td>
-        <td>{rare_byproduct}</td>
-        <td>{special_byproduct}</td>
-        <td>{regular_by_product}</td>
-        <td>{imperial_profit}</td>
+        <td>{chance_for_max}%</td>
+        <td>{rare_byproduct}%</td>
+        <td>{special_byproduct}%</td>
+        <td>{regular_by_product}%</td>
+        <td>{imperial_profit}%</td>
       </tr>
     );
   });
@@ -139,18 +139,18 @@ function AlchemyDiff(props) {
     return (
       <tr key="gainz" className="diff-row">
         <td>Gainz!</td>
-        <td>&#43; {chance_for_max}</td>
-        <td>&#43; {rare_byproduct}</td>
-        <td>&#43; {special_byproduct}</td>
-        <td>&#43; {regular_by_product}</td>
-        <td>&#43; {imperial_profit}</td>
+        <td>&#43; {chance_for_max}%</td>
+        <td>&#43; {rare_byproduct}%</td>
+        <td>&#43; {special_byproduct}%</td>
+        <td>&#43; {regular_by_product}%</td>
+        <td>&#43; {imperial_profit}%</td>
       </tr>
     );
   })
   : null;
 
   return (
-    <div className="fishing-diff">
+    <div className="alchemy-diff">
       <div className="mastery-selectors">
         <h4>Compare 2 masteries to see the difference!</h4>
         <p>* Order does not matter, it will calculate automatically. *</p>
@@ -172,7 +172,7 @@ function AlchemyDiff(props) {
         </select>
       </div>
       <div className="table-display">
-        <table className="fishing-info">
+        <table className="alchemy-info">
           <thead>
             <tr className="info-row">
               <th>Mastery</th>
