@@ -41,8 +41,8 @@ function App() {
 				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 				<div>
 					<ul>
-						<li path="/alchemy">
-							<Link path="/alchemy">Alchemy</Link>
+						<li>
+							<Link to="/alchemy">Alchemy</Link>
 						</li>
 						<li>
 							<Link to="/cooking">Cooking</Link>
