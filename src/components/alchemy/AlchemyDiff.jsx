@@ -139,11 +139,11 @@ function AlchemyDiff(props) {
     return (
       <tr key="gainz" className="diff-row">
         <td>Gainz!</td>
-        <td>&#43; {chance_for_max.toFixed(2)}</td>
-        <td>&#43; {rare_byproduct.toFixed(2)}</td>
-        <td>&#43; {special_byproduct.toFixed(2)}</td>
-        <td>&#43; {regular_by_product.toFixed(2)}</td>
-        <td>&#43; {imperial_profit.toFixed(2)}</td>
+        <td>&#43; {chance_for_max}</td>
+        <td>&#43; {rare_byproduct}</td>
+        <td>&#43; {special_byproduct}</td>
+        <td>&#43; {regular_by_product}</td>
+        <td>&#43; {imperial_profit}</td>
       </tr>
     );
   })
