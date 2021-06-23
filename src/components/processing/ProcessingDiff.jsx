@@ -104,7 +104,6 @@ function ProcessingDiff(props) {
   const diffRow = (diff !== undefined)
     ? diff.map(bracket => {
       const {
-        mastery,
         quantity
       } = bracket;
 
