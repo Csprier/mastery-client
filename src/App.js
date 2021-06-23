@@ -40,6 +40,9 @@ function App() {
 				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 				<div>
 					<ul>
+						<li path="/alchemy">
+							<Link path="/alchemy">Alchemy</Link>
+						</li>
 						<li>
 							<Link to="/cooking">Cooking</Link>
 						</li>
@@ -58,6 +61,9 @@ function App() {
 					</ul>
 				</div>
 				<Switch>
+					<Route path="/alchemy">
+						<Alchemy />
+					</Route>
 					<Route path="/cooking">
 						<Cooking />
 					</Route>
