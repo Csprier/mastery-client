@@ -1,44 +1,56 @@
 .App {
+  position: absolute;
 	height: 100%;
 	width: 100%;
-}
-.App h1 {
-	text-align: center;
-	background-color: #5700b9;
-	padding: 4px;
+  top: 0px;
+  left: 0px;
 }
 
 .message {
 	text-align: center;
-	color: goldenrod;
+	color: #ffedd4;
 }
 
+/* ======================================= */
 /* NAGIVATION */
+/* ==================================== */
 .navigation-container {
-	border: 1px solid red;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  background-color: #745c3c;
 }
 
 .navigation-list {
+  padding: 5px;
+  margin: 0px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	border: 1px solid blue;
+  border-bottom: 1px solid #d2b07d;
 }
 .navigation-list li {
-	border: 1px solid orange;
-	padding: 4px 7px;
+	padding: 2px 1px;
 	margin: 2px;
 	list-style-type: none;
 }
 .navigation-list li a {
-	color: goldenrod;
+	color: #ffedd4;
+  font-weight: bold;
 	text-decoration: none;
+}
+.navigation-list li a:hover {
+  color: goldenrod;
 }
 
 /* ======================================= */
 /* OPTION ELEMENT STYLES */
 /* ==================================== */
-/* .mastery-selectors {
+.mastery-selectors {
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -49,30 +61,30 @@
   padding: 3px;
 }
 .mastery-selectors p {
-  color: silver;
+  color: black;
   font-size: 11px;
   margin: 0px 0px 5px 0px;
   padding: 2px;
 }
 
 .mastery-select {
-  border: 1px solid rgba(109, 109, 109, 0.39);
-  color: silver;
+  border: 1px solid #05031a98;
+  background-color: #01000798;
+  color: black;
   margin: 2px;
   padding: 3px;
-} */
+}
 
 
 /* ======================================= */
 /* TABLE CSS */
 /* ==================================== */
-/* th, td {
+th, td {
   padding: 3px;
   text-align: center;
-  border: 1px solid black;
 }
 td {
-  color: silver;
+  color: black;
 }
 .table-display {
   width: 100%;
@@ -81,20 +93,20 @@ td {
   margin: 0px;
 }
 .info-row {
-  color: silver;
+  color: black;
 }
 .info-row th {
-  border: 1px solid silver;
+  border: 1px solid #05031a98;
 }
 
 .range-row {
-  border: 1px solid silver;
+  border: 1px solid #05031a98;
 }
 .range-row td {
-  border: 1px solid rgba(109, 109, 109, 0.39);
+  border: 1px solid #05031a98;
 }
 
 .diff-row td {
   color: rgb(0, 207, 0);
   border: 1px solid green;
-} */
+}
