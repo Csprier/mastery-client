@@ -3,71 +3,9 @@
   padding: 0px;
 }
 
-/* .mastery-selectors {
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-}
-.mastery-selectors h4 {
-  color: goldenrod;
-  margin: 0px;
-  padding: 3px;
-}
-.mastery-selectors p {
-  color: silver;
-  font-size: 11px;
-  margin: 0px 0px 5px 0px;
-  padding: 2px;
-}
-
-.mastery-select {
-  background-color: black;
-  border: 1px solid rgba(109, 109, 109, 0.39);
-  color: silver;
-  margin: 2px;
-  padding: 3px;
-} */
-
-/* ======================================= */
-/* TABLE CSS */
-/* ==================== */
 .gathering-info {
   width: 100%;
   padding: 0px;
   /* border: 1px solid black; */
   font-size: 13px;
-}
-th, td {
-  padding: 3px;
-  text-align: center;
-  border: 1px solid black;
-}
-td {
-  color: silver;
-}
-.table-display {
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-.info-row {
-  color: silver;
-}
-.info-row th {
-  border: 1px solid silver;
-}
-
-.range-row {
-  border: 1px solid silver;
-}
-.range-row td {
-  border: 1px solid rgba(109, 109, 109, 0.39);
-}
-
-.diff-row {
-}
-.diff-row td {
-  color: rgb(0, 207, 0);
-  border: 1px solid green;
 }
