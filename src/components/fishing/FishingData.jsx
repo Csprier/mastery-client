@@ -30,7 +30,7 @@ function FishingData() {
 
   return (
     <div className="fishing-data">
-      <h1>Fishing</h1>
+      <h2>Fishing</h2>
       <FishingDiff 
         data={data}
         masteries={masteries}

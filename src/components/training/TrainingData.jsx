@@ -29,7 +29,7 @@ function TrainingData() {
 
   return (
     <div className="training-data">
-      <h1>Training Data</h1>
+      <h2>Training Data</h2>
       <TrainingDiff 
         data={data}
         masteries={masteries}

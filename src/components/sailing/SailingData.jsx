@@ -29,7 +29,7 @@ function SailingData() {
 
   return (
     <div className="sailing-data">
-      <h1>Sailing Data</h1>
+      <h2>Sailing Data</h2>
       <SailingDiff 
         data={data}
         masteries={masteries}

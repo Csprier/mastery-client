@@ -30,7 +30,7 @@ function AlchemyData() {
 
   return (
     <div className="alchemy-data">
-      <h1>Alchemy Data</h1>
+      <h2>Alchemy Data</h2>
       <AlchemyDiff 
         data={data}
         masteries={masteries}

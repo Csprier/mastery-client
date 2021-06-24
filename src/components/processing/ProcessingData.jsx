@@ -29,7 +29,7 @@ function ProcessingData() {
 
   return (
     <div className="processing-data">
-      <h1>Processing Data</h1>
+      <h2>Processing Data</h2>
       <ProcessingDiff 
         data={data}
         masteries={masteries}
