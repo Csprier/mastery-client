@@ -38,10 +38,11 @@ function App() {
 	return (
 		<Router>
 			<div className='App'>
-				<h1>Mastery Look-up</h1>
-				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 				<div className="navigation-container">
 					<ul className="navigation-list">
+						<li>
+							<Link to="/">Home</Link>
+						</li>
 						<li>
 							<Link to="/alchemy">Alchemy</Link>
 						</li>
@@ -88,6 +89,7 @@ function App() {
 						<Training />
 					</Route>
 				</Switch>
+				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 			</div>
 		</Router>
 	);
