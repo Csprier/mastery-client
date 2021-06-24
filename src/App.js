@@ -40,8 +40,8 @@ function App() {
 			<div className='App'>
 				<h1>Mastery Look-up</h1>
 				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
-				<div>
-					<ul>
+				<div className="navigation-container">
+					<ul className="navigation-list">
 						<li>
 							<Link to="/alchemy">Alchemy</Link>
 						</li>
