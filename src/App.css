@@ -21,7 +21,7 @@
 }
 
 .navigation-list {
-  padding: 5px;
+  padding: 3px;
   margin: 0px;
 	display: flex;
 	flex-direction: row;
@@ -35,8 +35,8 @@
 }
 .navigation-list li a {
 	color: #ffedd4;
-  font-weight: bold;
 	text-decoration: none;
+  font-size: 14px;
 }
 .navigation-list li a:hover {
   color: goldenrod;

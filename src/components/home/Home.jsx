@@ -7,7 +7,6 @@ import pegasus from './images/pegasus.png';
 import witch from './images/witch.png';
 
 function Home(props) {
-  console.log(props);
   return (
     <div className="home">
       <div className="images">

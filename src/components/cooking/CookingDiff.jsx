@@ -53,7 +53,7 @@ function CookingDiff(props) {
    useEffect(() => {
     function updateRange() {
       let dyanmicRange = props.data.filter((bracket) => {
-        return parseInt(bracket.mastery) === parseInt(m1) || parseInt(bracket.mastery) === parseInt(m2);
+        return parseInt(bracket.mastery, 10) === parseInt(m1, 10) || parseInt(bracket.mastery, 10) === parseInt(m2, 10);
       });
       setRange(dyanmicRange);
     };
