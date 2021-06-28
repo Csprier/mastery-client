@@ -67,6 +67,9 @@ function App() {
 					</ul>
 				</div>
 				<Switch>
+					<Route path="/">
+						<Home />
+					</Route>
 					<Route path="/alchemy">
 						<Alchemy />
 					</Route>
