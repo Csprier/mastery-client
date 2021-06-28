@@ -29,7 +29,7 @@ function CookingData() {
 
   return (
     <div className="cooking-data">
-      <h2>Cooking Data!</h2>
+      <h2>Cooking</h2>
       <CookingDiff 
         data={data}
         masteries={masteries}
