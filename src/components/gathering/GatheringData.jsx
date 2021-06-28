@@ -29,7 +29,7 @@ function GatheringData() {
 
   return(
     <div className="gathering-data">
-      <h2>Gathering Data!</h2>
+      <h2>Gathering</h2>
       <GatheringDiff 
         data={data}
         masteries={masteries} 
