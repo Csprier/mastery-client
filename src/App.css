@@ -33,14 +33,10 @@
 	justify-content: space-evenly;
   border-bottom: 1px solid #d2b07d;
 }
-.navigation-list ul {
-  border: 2px solid red;
-}
 .navigation-list li {
 	padding: 2px 1px;
 	margin: 2px;
 	list-style-type: none;
-  border: 2px solid red;
 }
 .navigation-list li a {
 	color: #ffedd4;

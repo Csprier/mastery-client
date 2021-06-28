@@ -8,6 +8,7 @@ import {
 
 
 // components
+import Home from './components/home/Home';
 import Alchemy from './components/alchemy/Alchemy';
 import Cooking from './components/cooking/Cooking';
 import Fishing from './components/fishing/Fishing';

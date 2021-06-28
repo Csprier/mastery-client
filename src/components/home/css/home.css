@@ -1,0 +1,12 @@
+.home {
+  margin: 0px;
+  padding: 0px;
+}
+
+.home img {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
