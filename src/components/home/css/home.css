@@ -10,3 +10,12 @@
   margin-right: auto;
   width: 50%;
 }
+
+.message-container {
+  width: 50%;
+  margin: 0 auto;
+}
+.message-container p {
+  text-align: center;
+  color: #ffedd4;
+}

@@ -69,7 +69,7 @@ function App() {
 				</div>
 				<Switch>
 					<Route exact path="/">
-						<Home />
+						<Home message={message} />
 					</Route>
 					<Route path="/alchemy">
 						<Alchemy />
@@ -93,7 +93,6 @@ function App() {
 						<Training />
 					</Route>
 				</Switch>
-				<p className="message">{message !== '' ? message : 'There is a problem...'}</p>
 			</div>
 		</Router>
 	);
