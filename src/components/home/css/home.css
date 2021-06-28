@@ -3,12 +3,32 @@
   padding: 0px;
 }
 
-.home img {
+.images {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.logo {
   display: block;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+}
+.pegasus {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 250px;
+}
+.witch {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 250px;
 }
 
 .message-container {
