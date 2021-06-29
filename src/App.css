@@ -88,10 +88,11 @@ td {
   margin: 0px;
 }
 .info-row {
-  color: #d2b07d;
-}
+  color: #a68555;
+  }
 .info-row th {
   border: 1px solid #d2b07d;
+  background-color: #ffedd4;
 }
 
 .range-row {

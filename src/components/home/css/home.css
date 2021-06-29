@@ -34,6 +34,9 @@
 .message-container {
   width: 50%;
   margin: 0 auto;
+  padding: 4px;
+  background-color: #232324;
+  border: 1px solid #6d6d75;
 }
 .message-container p {
   text-align: center;
