@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react';
 import './css/alchemy-diff.css';
 
 function AlchemyDiff(props) {
-  console.log('props', props);
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
   const [diff, setDiff] = useState([]);
-
+  const [viewAll, setViewAll] = useState(false);
+  console.log('va', viewAll)
   /** ===============================================/
    *  RANGE FROM SELECT ELEMENT FUNCTIONS 
    * ==========================*/
@@ -170,6 +170,7 @@ function AlchemyDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
+        <button onClick={() => setViewAll(!viewAll)}>View table</button>
       </div>
       <div className="table-display">
         <table className="alchemy-info">
