@@ -1,4 +1,5 @@
 .gathering-diff {
+  width: 100%;
   margin: 0px;
   padding: 0px;
 }
@@ -6,6 +7,6 @@
 .gathering-info {
   width: 100%;
   padding: 0px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   font-size: 13px;
 }

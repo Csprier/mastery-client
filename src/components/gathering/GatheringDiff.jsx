@@ -204,11 +204,11 @@ function GatheringDiff(props) {
               <th>Basic Item Drop Chance</th>
               <th>Basic Item Drop Amount</th>
               <th>Rare Resources Item Drop Chance</th>
-              <th>Rare Resources Item Drop Chance</th>
+              <th>Rare Resources Item Drop Amount</th>
               <th>Special Resources Item Drop Chance</th>
-              <th>Special Resources Item Drop Chance</th>
+              <th>Special Resources Item Drop Amount</th>
               <th>Very Rare Resources Item Drop Chance</th>
-              <th>Very Rare Resources Item Drop Chance</th>
+              <th>Very Rare Resources Item Drop Amount</th>
             </tr>
           </thead>
           <tbody>
