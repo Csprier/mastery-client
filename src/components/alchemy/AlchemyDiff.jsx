@@ -9,7 +9,7 @@ function AlchemyDiff(props) {
   const [range, setRange] = useState([]);
   const [diff, setDiff] = useState([]);
   const [viewAll, setViewAll] = useState(false);
-  console.log('va', viewAll)
+
   /** ===============================================/
    *  RANGE FROM SELECT ELEMENT FUNCTIONS 
    * ==========================*/
@@ -104,6 +104,38 @@ function AlchemyDiff(props) {
     setDiff(diffData);
   }, [range]);
 
+  useEffect(() => {
+    if (viewAll & range.length > 0) {
+      setM1('');
+      setM2('');
+      setRange([]);
+    }
+  }, [viewAll]);
+  /** ===============================================/
+   * ROW COMPONENTS
+   * ==========================*/
+  const allRows = props.data.map(bracket => {
+    const {
+      mastery,
+      chance_for_max,
+      rare_byproduct,
+      special_byproduct,
+      regular_by_product,
+      imperial_profit
+    } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>{chance_for_max}%</td>
+        <td>{rare_byproduct}%</td>
+        <td>{special_byproduct}%</td>
+        <td>{regular_by_product}%</td>
+        <td>{imperial_profit}%</td>
+      </tr>
+    );
+  });
+
   const rangeRows = range.map(bracket => {
     const {
       mastery,
@@ -170,7 +202,7 @@ function AlchemyDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
-        <button onClick={() => setViewAll(!viewAll)}>View table</button>
+        <button className='view-all-button' onClick={() => setViewAll(!viewAll)}>View table</button>
       </div>
       <div className="table-display">
         <table className="alchemy-info">
@@ -181,11 +213,13 @@ function AlchemyDiff(props) {
               <th>Rare Byproduct</th>
               <th>Special Byproduct</th>
               <th>Regular By Product</th>
-              <th>Imperial Profi</th>
+              <th>Imperial Profit</th>
             </tr>
           </thead>
           <tbody>
-            {rangeRows}
+            {/* {(viewAll) ? allRows : rangeRows} */}
+            {(range.length > 0) ? rangeRows : allRows}
+            {/* {rangeRows} */}
             {diffRow}
           </tbody>
         </table>

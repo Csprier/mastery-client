@@ -70,6 +70,16 @@
   padding: 3px;
 }
 
+/* ======================================= */
+/* BUTTON STYLE (every Diff component has the same button) */
+/* ==================================== */
+.view-all-button {
+  border: 1px solid #6d6d75;
+  background-color: #232324;
+  color:#ffedd4;
+  margin: 2px;
+  padding: 4px 10px;
+}
 
 /* ======================================= */
 /* TABLE CSS */
