@@ -9,6 +9,7 @@ function FishingDiff(props) {
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
   const [diff, setDiff] = useState([]);
+  const [viewAll, setViewAll] = useState(false);
 
   /** ===============================================/
    *  RANGE FROM SELECT ELEMENT FUNCTIONS 
@@ -89,6 +90,45 @@ function FishingDiff(props) {
     setDiff(diffData);
   }, [range]);
 
+  useEffect(() => {
+    function resetOptionElementValues() {
+      let masteryA = document.getElementById('m1');
+      let masteryB = document.getElementById('m2');
+
+      masteryA.selectedIndex = 0;
+      masteryB.selectedIndex = 0;
+      return;
+    };
+
+    if (viewAll && range.length > 0) {
+      setM1('');
+      setM2('');
+      setRange([]);
+      resetOptionElementValues();
+      setViewAll(false);
+    }
+    if (viewAll && range.length === 0) {
+      setViewAll(false);
+    }
+  }, [viewAll]);
+
+  /** ===============================================/
+   * ROW COMPONENTS
+   * ==========================*/
+   const allRows = props.data.map(bracket => {
+    const {
+      mastery,
+      orange_fish_rate
+    } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>{orange_fish_rate}%</td>
+      </tr>
+    );
+  });
+
   const rangeRows = range.map(bracket => {
     const {
       mastery,
@@ -98,7 +138,7 @@ function FishingDiff(props) {
     return (
       <tr key={mastery} className="range-row">
         <td>{mastery}</td>
-        <td>{orange_fish_rate}</td>
+        <td>{orange_fish_rate}%</td>
       </tr>
     );
   });
@@ -139,6 +179,10 @@ function FishingDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
+        <button 
+          className='view-all-button' 
+          onClick={() => setViewAll(!viewAll)}
+        >View table</button>
       </div>
       <div className="table-display">
         <table className="fishing-info">
@@ -149,7 +193,7 @@ function FishingDiff(props) {
             </tr>
           </thead>
           <tbody>
-            {rangeRows}
+            {(range.length > 0) ? rangeRows : allRows}
             {diffRow}
           </tbody>
         </table>
