@@ -114,11 +114,14 @@ function AlchemyDiff(props) {
       return;
     };
 
-    if (viewAll & range.length > 0) {
+    if (viewAll && range.length > 0) {
       setM1('');
       setM2('');
       setRange([]);
       resetOptionElementValues();
+      setViewAll(false);
+    }
+    if (viewAll && range.length === 0) {
       setViewAll(false);
     }
   }, [viewAll]);
