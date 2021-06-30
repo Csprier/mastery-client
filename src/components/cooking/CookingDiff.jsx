@@ -8,6 +8,7 @@ function CookingDiff(props) {
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
   const [diff, setDiff] = useState([]);
+  const [viewAll, setViewAll] = useState(false);
 
   /** ===============================================/
    *  RANGE FROM SELECT ELEMENT FUNCTIONS 
@@ -105,6 +106,53 @@ function CookingDiff(props) {
     setDiff(diffData);
   }, [range]);
 
+  useEffect(() => {
+    function resetOptionElementValues() {
+      let masteryA = document.getElementById('m1');
+      let masteryB = document.getElementById('m2');
+
+      masteryA.selectedIndex = 0;
+      masteryB.selectedIndex = 0;
+      return;
+    };
+
+    if (viewAll && range.length > 0) {
+      setM1('');
+      setM2('');
+      setRange([]);
+      resetOptionElementValues();
+      setViewAll(false);
+    }
+    if (viewAll && range.length === 0) {
+      setViewAll(false);
+    }
+  }, [viewAll]);
+
+  /** ===============================================/
+   * ROW COMPONENTS
+   * ==========================*/
+   const allRows = props.data.map(bracket => {
+    const {
+      mastery,
+      higher_grade_chance,
+      higher_grade_max_amount_chance,
+      imperial_cooking_silver,
+      mass_cooking_chance,
+      max_dishes_chance,
+    } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>{higher_grade_chance}%</td>
+        <td>{higher_grade_max_amount_chance}%</td>
+        <td>{imperial_cooking_silver}%</td>
+        <td>{mass_cooking_chance}%</td>
+        <td>{max_dishes_chance}%</td>
+      </tr>
+    );
+  });
+
   const rangeRows = range.map(bracket => {
     const {
       mastery,
@@ -172,6 +220,10 @@ function CookingDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
+        <button 
+          className='view-all-button' 
+          onClick={() => setViewAll(!viewAll)}
+        >View table</button>
       </div>
       <div className="table-display">
         <table className="cooking-info">
@@ -186,7 +238,7 @@ function CookingDiff(props) {
             </tr>
           </thead>
           <tbody>
-            {rangeRows}
+            {(range.length > 0) ? rangeRows : allRows}
             {diffRow}
           </tbody>
         </table>

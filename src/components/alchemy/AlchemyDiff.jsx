@@ -197,7 +197,6 @@ function AlchemyDiff(props) {
   })
   : null;
 
-  console.log(viewAll);
   return (
     <div className="alchemy-diff">
       <div className="mastery-selectors">
