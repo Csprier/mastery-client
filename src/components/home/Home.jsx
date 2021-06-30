@@ -11,7 +11,7 @@ function Home(props) {
   return (
     <div className="home">
       <div className="images">
-        {/* <img src={pegasus} className="pegasus" alt="pegasus" /> */}
+        <img src={pegasus} className="pegasus" alt="pegasus" />
         <img src={sorceress} className="sorceress" alt="sorceress" />
         <img src={logo} className="logo" alt="Logo" />
         <img src={witch} className="witch" alt="witch" />
