@@ -8,9 +8,9 @@
   height: 100%;
   margin: 0px;
   padding: 0px;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 .logo {
   display: block;
@@ -21,8 +21,15 @@
 .pegasus {
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  /* left: 0px; */
   width: 250px;
+}
+.sorceress {
+  position: absolute;
+  bottom: 0px;
+  lefT: 0px;
+  width: 700px;
+  border: 1px solid green;
 }
 .witch {
   position: absolute;

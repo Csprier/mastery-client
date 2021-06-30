@@ -19,6 +19,7 @@ import Training from './components/training/Training';
 
 // css
 import './App.css';
+import blackspiritlogo from './components/home/images/blackspiritlogo.png';
 
 function App() {
 	const [message, setMessage] = useState('');
@@ -40,6 +41,7 @@ function App() {
 		<Router>
 			<div className='App'>
 				<div className="navigation-container">
+					<img src={blackspiritlogo} className="black-spirit-logo" alt="blackspiritlogo" />
 					<ul className="navigation-list">
 						<li>
 							<Link to="/">Home</Link>

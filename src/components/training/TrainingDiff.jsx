@@ -8,6 +8,7 @@ function TrainingDiff(props) {
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
   const [diff, setDiff] = useState([]);
+  const [viewAll, setViewAll] = useState(false);
 
   /** ===============================================/
    *  RANGE FROM SELECT ELEMENT FUNCTIONS 
@@ -97,6 +98,49 @@ function TrainingDiff(props) {
     setDiff(diffData);
   }, [range]);
 
+  useEffect(() => {
+    function resetOptionElementValues() {
+      let masteryA = document.getElementById('m1');
+      let masteryB = document.getElementById('m2');
+
+      masteryA.selectedIndex = 0;
+      masteryB.selectedIndex = 0;
+      return;
+    };
+
+    if (viewAll && range.length > 0) {
+      setM1('');
+      setM2('');
+      setRange([]);
+      resetOptionElementValues();
+      setViewAll(false);
+    }
+    if (viewAll && range.length === 0) {
+      setViewAll(false);
+    }
+  }, [viewAll]);
+
+  /** ===============================================/
+   * ROW COMPONENTS
+   * ==========================*/
+   const allRows = props.data.map(bracket => {
+    const {
+      mastery,
+      breed_higher_tier_increase,
+      taming_success_increase,
+      mount_xp_increase
+    } = bracket;
+
+    return (
+      <tr key={mastery} className="range-row">
+        <td>{mastery}</td>
+        <td>{breed_higher_tier_increase}%</td>
+        <td>{taming_success_increase}%</td>
+        <td>{mount_xp_increase}%</td>
+      </tr>
+    );
+  });
+
   const rangeRows = range.map(bracket => {
     const {
       mastery,
@@ -155,6 +199,10 @@ function TrainingDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
+        <button 
+          className='view-all-button' 
+          onClick={() => setViewAll(!viewAll)}
+        >View table</button>
       </div>
       <div className="table-display">
         <table className="training-info">
@@ -167,7 +215,7 @@ function TrainingDiff(props) {
             </tr>
           </thead>
           <tbody>
-            {rangeRows}
+            {(range.length > 0) ? rangeRows : allRows}
             {diffRow}
           </tbody>
         </table>
