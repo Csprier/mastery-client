@@ -130,13 +130,19 @@ function SailingDiff(props) {
    const allRows = props.data.map(bracket => {
     const {
       mastery,
-      orange_fish_rate
+      acceleration_increase,
+      speed_increase,
+      turn_increase,
+      brake_increase
     } = bracket;
 
     return (
       <tr key={mastery} className="range-row">
         <td>{mastery}</td>
-        <td>{orange_fish_rate}%</td>
+        <td>{acceleration_increase}%</td>
+        <td>{speed_increase}%</td>
+        <td>{turn_increase}%</td>
+        <td>{brake_increase}%</td>
       </tr>
     );
   });
