@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import './css/fishing-diff.css';
 
 function FishingDiff(props) {
-  console.log('props', props);
   const [m1, setM1] = useState('');
   const [m2, setM2] = useState('');
   const [range, setRange] = useState([]);
