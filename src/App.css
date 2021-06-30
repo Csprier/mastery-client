@@ -110,8 +110,9 @@ td {
   color: #a68555;
   }
 .info-row th {
-  border: 1px solid #d2b07d;
+  border: 2px solid #d2b07d;
   background-color: #ffedd4;
+  padding: 3px;
 }
 
 .range-row {
