@@ -105,12 +105,24 @@ function AlchemyDiff(props) {
   }, [range]);
 
   useEffect(() => {
+    function resetOptionElementValues() {
+      let masteryA = document.getElementById('m1');
+      let masteryB = document.getElementById('m2');
+
+      masteryA.selectedIndex = 0;
+      masteryB.selectedIndex = 0;
+      return;
+    };
+
     if (viewAll & range.length > 0) {
       setM1('');
       setM2('');
       setRange([]);
+      resetOptionElementValues();
     }
   }, [viewAll]);
+
+
   /** ===============================================/
    * ROW COMPONENTS
    * ==========================*/
