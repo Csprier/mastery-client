@@ -119,6 +119,7 @@ function AlchemyDiff(props) {
       setM2('');
       setRange([]);
       resetOptionElementValues();
+      setViewAll(false);
     }
   }, [viewAll]);
 
@@ -193,6 +194,7 @@ function AlchemyDiff(props) {
   })
   : null;
 
+  console.log(viewAll);
   return (
     <div className="alchemy-diff">
       <div className="mastery-selectors">
@@ -214,7 +216,10 @@ function AlchemyDiff(props) {
           <option>Select Mastery B</option>
           {masteryOptionElementsStop}
         </select>
-        <button className='view-all-button' onClick={() => setViewAll(!viewAll)}>View table</button>
+        <button 
+          className='view-all-button' 
+          onClick={() => setViewAll(!viewAll)}
+        >View table</button>
       </div>
       <div className="table-display">
         <table className="alchemy-info">
@@ -229,9 +234,7 @@ function AlchemyDiff(props) {
             </tr>
           </thead>
           <tbody>
-            {/* {(viewAll) ? allRows : rangeRows} */}
             {(range.length > 0) ? rangeRows : allRows}
-            {/* {rangeRows} */}
             {diffRow}
           </tbody>
         </table>
