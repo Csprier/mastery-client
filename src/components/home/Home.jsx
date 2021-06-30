@@ -16,7 +16,7 @@ function Home(props) {
       </div>
       <div className="message-container">
         <p className="message">{props.message !== '' ? props.message : 'There is a problem...'}</p>
-        <p>Select a life skill, then select 2 masteries and see what you'll gain for increasing your mastery!</p>
+        <p>Select a life skill, then select 2 masteries and see what you'll gain for increasing your mastery; or view the entire table!</p>
       </div>
     </div>
   );

@@ -32,9 +32,9 @@
 }
 
 .message-container {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
-  padding: 4px;
+  padding: 4px 20px;
   background-color: #232324;
   border: 1px solid #6d6d75;
 }
