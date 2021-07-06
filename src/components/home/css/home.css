@@ -31,9 +31,9 @@
 .witch {
   position: absolute;
   bottom: 0px;
-  right: 350px;
+  right: 300px;
   width: 250px;
-  z-index: 1;
+  z-index: 0;
 }
 .darkknight {
   position: absolute;
