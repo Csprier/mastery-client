@@ -3,6 +3,6 @@ WORKDIR /home/cpdev/mastery/mastery-client
 COPY . .
 COPY package.json ./
 COPY package-lock.json ./
-RUN yarn install
+RUN npm install
 COPY . ./
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
