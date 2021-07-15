@@ -25,7 +25,7 @@ function App() {
 	const [message, setMessage] = useState('');
 
 	async function fetchGreeting() {
-		const res = await fetch('http://localhost:8080/greeting')
+		const res = await fetch('http://0.0.0.0:8080/greeting')
 			.then((res) =>
 				res.json()
 			);
