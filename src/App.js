@@ -6,7 +6,6 @@ import {
   Link
 } from 'react-router-dom';
 
-
 // components
 import Home from './components/home/Home';
 import Alchemy from './components/alchemy/Alchemy';
@@ -29,7 +28,6 @@ function App() {
 			.then((res) =>
 				res.json()
 			);
-		// console.log('RES:::', res);
 		setMessage(res.message);
 	}
 
