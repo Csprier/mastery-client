@@ -25,7 +25,7 @@ function App() {
 	const [message, setMessage] = useState('');
 
 	async function fetchGreeting() {
-		const res = await fetch('http://172.25.0.2:8080/greeting')
+		const res = await fetch(process.env.REACT_APP_API_BASE_URL + '/greeting')
 			.then((res) =>
 				res.json()
 			);

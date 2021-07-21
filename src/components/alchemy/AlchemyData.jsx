@@ -11,7 +11,7 @@ function AlchemyData() {
   const [masteries, setMasteries] = useState([]);
 
   async function fetchAllAlchemyData() {
-    const data = await fetch('http://0.0.0.0:8080/alchemy')
+    const data = await fetch(process.env.REACT_APP_API_BASE_URL + '/alchemy')
       .then(res => res.json())
       .catch(e => console.error(e));
     let masteriesData = data.map(bracket => {
