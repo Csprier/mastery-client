@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:16.14-alpine
 # WORKDIR /home/cpdev/mastery/mastery-client
 WORKDIR /home/app
 COPY . .
